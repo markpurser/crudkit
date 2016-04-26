@@ -150,6 +150,7 @@ abstract class SQLColumn {
             case "numeric":
             case "smallint":
             case "bigint":
+            case "boolean":
                 return self::TYPE_NUMBER;
             case "string":
             case "text":
