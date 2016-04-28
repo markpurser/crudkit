@@ -5,11 +5,17 @@ namespace CrudKit\Pages;
 
 use CrudKit\Data\SQLDataProvider;
 
-abstract class BaseSQLDataPage extends BasicDataPage {
+class BaseSQLDataPage extends BasicDataPage {
     /**
      * @var SQLDataProvider
      */
     protected $sqlProvider = null;
+
+    public function __construct($id, $connection)
+    {
+        $this->preInit($id, $connection->getConnection());
+    }
+
 
     protected function preInit ($id, $conn) {
         $this->setId($id);
